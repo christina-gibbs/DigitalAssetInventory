@@ -1,0 +1,18 @@
+$targetFolder = Read-Host "Enter the target folder path"
+$outputPath = Join-Path $targetFolder "FileType_Count.csv"
+
+$filesByType = Get-ChildItem -File -Recurse -Force $targetFolder | Group-Object Extension
+
+$dataColl = $filesByType | ForEach-Object {
+    $fileType = $_.Name
+    $fileCount = $_.Count
+
+    [PSCustomObject]@{
+        "FileType" = $fileType
+        "FileCount" = $fileCount
+    }
+}
+
+$dataColl | Export-Csv -Path $outputPath -NoTypeInformation
+
+Write-Host "Data exported to: $outputPath"
