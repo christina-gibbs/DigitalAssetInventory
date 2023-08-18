@@ -1,4 +1,3 @@
-
 $targetFolder = Read-Host "Enter the target folder path"
 $outputPath = Join-Path $targetFolder "FileType_Count_Size.csv"
 
