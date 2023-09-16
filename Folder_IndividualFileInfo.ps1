@@ -1,5 +1,5 @@
 $targetFolder = Read-Host "Enter the target folder path"
-$outputPath = Join-Path $targetFolder "Folder_FileInfo_noMD5.csv"
+$outputPath = Join-Path $targetFolder "Folder_IndividualFileInfo.csv"
 
 $fileSizeUnit = Read-Host "Enter the desired file size unit (MB, GB, TB)"
 
