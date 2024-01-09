@@ -3,7 +3,7 @@ $outputPath = Join-Path $targetFolder "Folder_IndividualFileInfo.csv"
 
 $fileSizeUnit = Read-Host "Enter the desired file size unit (MB, GB, TB)"
 
-$dataColl = Get-ChildItem -Recurse -Force $targetFolder -File -ErrorAction SilentlyContinue | ForEach-Object {
+$dataColl = Get-ChildItem -Force $targetFolder -Recurse -File -ErrorAction SilentlyContinue | ForEach-Object {
     $fullFilePath = $_.FullName
     $fileName = $_.Name
     $fileType = $_.Extension
